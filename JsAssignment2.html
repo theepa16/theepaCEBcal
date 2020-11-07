@@ -1,0 +1,105 @@
+<!DOCTYPE Html>
+<html>
+<head>
+    <title>Electricity bill</title>
+    <style>
+    body{
+         margin:200px;
+		 background-color: linen;
+         background-repeat:no-repeat;
+         background-size:cover;
+         background-attchment:fixed;
+        }
+    .a{
+       border-style:solid;
+       border-radius:20px;
+       border-width:10px;
+       padding-left:20px;
+       padding-top:20px
+       text-align:center;
+       font-size:150%;
+      }
+    .b{	font-size:100%;
+	}
+    </style>
+</head>
+      <body >
+      <center><form Method="post" target="_self">
+      <table class="a">
+      <tr>
+          <td><p align="right"> No of Units Used :   </p></td>
+          <td> <input type="Number" name="Number of unit" id="Eunit" size=15></td>
+          <td>  kWh  </td>
+      </tr>
+      <tr>
+          <td colspan="2" align="right"><b><input type="reset" value="Clear" size="30"></b></td>
+          <td></td>
+      </tr>
+      <tr>
+         <td colspan="2" align="right"><b><button type="button" name="button" onclick="Billfunction()" size="15"> Calculate My Bill </button></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="2" align="center"><p>  Your Bill amount is : <span id="BillAmount"></span> Rs </p></td>
+         <td></td>
+      </tr>
+      </table>
+      </form>
+      <table class="b">
+      <tr>
+           <td align="left"> <a href="https://ceb.lk/bill-calculation-commercial/en" target="_blank"><p> More Information on how my bill is <br>  calculated </p></a></td>
+		   <td></td>
+           <td align="right"> <a href="https://roar.media/english/life/reports/electricity-bill-calculated-analysis" target="_blank"><p> Go to CEB web site </p> </a></td>
+     </tr>
+     <tr>
+          <td colspan="3" align="center"> Created by:Pratheepa Jeyapalan </td>
+     </tr>
+     </table>
+     </center>					
+			
+    <script>
+    function Billfunction()
+                    {
+                     let unit=document.getElementById("Eunit").value;
+                      if(unit<=30)
+                                  {
+                                  document.getElementById("BillAmount").innerHTML=Number(unit)*7.85;	
+                                  }
+                      else if(unit<=60)
+                                   {
+                                  document.getElementById("BillAmount").innerHTML=235.50+(Number(unit)-30)*7.85;
+                                   }
+                     else if(unit<=90)
+                                   {
+                                    document.getElementById("BillAmount").innerHTML=471+(Number(unit)-60)*10;
+                                    }
+                     else if(unit<=120)
+                                    {
+                                    document.getElementById("BillAmount").innerHTML=771+(Number(unit)-90)*27.75;
+                                    }
+                     else 
+                                    {
+                                    document.getElementById("BillAmount").innerHTML=1603.50+(Number(unit)-120)*32+480;
+                                     }
+                    }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
